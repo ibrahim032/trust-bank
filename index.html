@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trust Bank Interio - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Trust Bank Interio</h2>
+    <form onsubmit="login(event)">
+      <input type="text" id="username" placeholder="Username" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username === "user" && password === "1234") {
+        localStorage.setItem("user", username);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Incorrect username or password.");
+      }
+    }
+  </script>
+</body>
+</html>

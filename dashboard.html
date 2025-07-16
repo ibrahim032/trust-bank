@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trust Bank Interio - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadUser()">
+  <div class="dashboard-container">
+    <h2>Welcome to Trust Bank Interio</h2>
+    <p id="welcome"></p>
+
+    <h3>Account Summary</h3>
+    <p><strong>Available Balance:</strong> $12,490.75</p>
+
+    <h3>Recent Transactions</h3>
+    <ul>
+      <li>+ $2,500.00 – Salary (July 15)</li>
+      <li>- $120.50 – Grocery Store (July 14)</li>
+      <li>- $49.99 – Netflix Subscription (July 13)</li>
+      <li>- $30.00 – ATM Withdrawal (July 13)</li>
+    </ul>
+  </div>
+
+  <script>
+    function loadUser() {
+      const user = localStorage.getItem("user");
+      if (!user) {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("welcome").innerText = `Hello, ${user}`;
+      }
+    }
+  </script>
+</body>
+</html>
